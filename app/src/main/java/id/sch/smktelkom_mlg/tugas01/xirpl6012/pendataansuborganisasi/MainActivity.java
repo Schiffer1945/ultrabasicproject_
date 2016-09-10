@@ -60,16 +60,40 @@ public class MainActivity extends AppCompatActivity {
         int nope = Integer.parseInt(etNo.getText().toString());
         tvHasil.setText("\n---------------------------\nNama : " + nama + "\nNomor HP : " + nope);
 
-        String radiohasil = null;
 
-        if (rbRPL.isChecked()) {
+        String hasil = null;
+
+        if (rgJurusan.getCheckedRadioButtonId() != -1) {
+            RadioButton rb = (RadioButton) findViewById(rgJurusan.getCheckedRadioButtonId());
+            hasil = rb.getText().toString();
+        }
+
+        /*if (rbRPL.isChecked()) {
             radiohasil = rbRPL.getText().toString();
         } else if (rbTKJ.isChecked()) {
             radiohasil = rbTKJ.getText().toString();
-        } else if (radiohasil == null) {
-            tvHasil2.setText("\nKelas : " + spKelas.getSelectedItem().toString() + "\nJurusan : Belum dipilih");
+        }*/
+        if (hasil == null) {
+            tvHasil2.setText("Belum memilih jurusan");
         } else {
-            tvHasil2.setText("\nKelas : " + spKelas.getSelectedItem().toString() + "\nJurusan :" + radiohasil);
+            tvHasil2.setText("\nKelas : " + spKelas.getSelectedItem().toString() + "\nJurusan :" + hasil);
         }
+
+        String cbHasil = "Suborganisasi:\n";
+        int startlen = cbHasil.length();
+        if (cbPaski.isChecked()) cbHasil += cbPaski.getText() + "\n";
+        if (cbMetic.isChecked()) cbHasil += cbMetic.getText() + "\n";
+        if (cbBDI.isChecked()) cbHasil += cbBDI.getText() + "\n";
+        if (cbPA.isChecked()) cbHasil += cbPA.getText() + "\n";
+        if (cbPMR.isChecked()) cbHasil += cbPMR.getText() + "\n";
+        if (cbMedsan.isChecked()) cbHasil += cbMedsan.getText() + "\n";
+        if (cbMAC.isChecked()) cbHasil += cbMAC.getText() + "\n";
+        if (cbFC.isChecked()) cbHasil += cbFC.getText() + "\n";
+        if (cbBasket.isChecked()) cbHasil += cbBasket.getText() + "\n";
+        if (cbVolly.isChecked()) cbHasil += cbVolly.getText() + "\n";
+
+        if (cbHasil.length() == startlen) cbHasil += "Tidak ada pada pilihan";
+
+        tvHasil3.setText(cbHasil);
     }
 }
