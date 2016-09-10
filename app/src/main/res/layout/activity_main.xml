@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:weightSum="1"
+        tools:context="id.sch.smktelkom_mlg.tugas01.xirpl6012.pendataansuborganisasi.MainActivity">
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SMK Telkom Malang" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Kesiswaan SMK Telkom" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/ts" />
+
+        <EditText
+            android:id="@+id/editTextNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTextNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+
+        <Spinner
+            android:id="@+id/spinnerKelas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/textViewJrn"
+            style="@style/Base.AlertDialog.AppCompat.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jurusan"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:id="@+id/rgJurusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonRPL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="RPL" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTKJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="TKJ" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewSub"
+            style="@style/Base.AlertDialog.AppCompat.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Suborganisasi"
+            android:textColor="#000000" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPaski"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Paskibra" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMetic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Metic" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBDI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="BDI" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPalwaga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Palwaga" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPMR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="PMR" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMedsan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Medsan" />
+
+        <CheckBox
+            android:id="@+id/checkBoxArt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="MAC" />
+
+        <CheckBox
+            android:id="@+id/checkBoxFutsal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="TSFC" />
+
+        <CheckBox
+            android:id="@+id/checkBoxBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="TSBC" />
+
+        <CheckBox
+            android:id="@+id/checkBoxVolly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="TSVC" />
+
+        <Button
+            android:id="@+id/buttonOK"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="OK" />
+
+    </LinearLayout>
+
+</ScrollView>
