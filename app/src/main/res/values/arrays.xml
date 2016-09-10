@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kelas">
+        <item>X (sepuluh)</item>
+        <item>XI (sebelas)</item>
+    </string-array>
+</resources>
