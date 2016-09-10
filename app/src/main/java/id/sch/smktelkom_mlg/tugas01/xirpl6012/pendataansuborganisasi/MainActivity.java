@@ -56,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doProcess() {
-        String nama = etNama.getText().toString();
-        int nope = Integer.parseInt(etNo.getText().toString());
-        tvHasil.setText("\n---------------------------\nNama : " + nama + "\nNomor HP : " + nope);
-
+        if (isValid()) {
+            String nama = etNama.getText().toString();
+            int nope = Integer.parseInt(etNo.getText().toString());
+            tvHasil.setText("\n---------------------------\nNama : " + nama + "\nNomor HP : " + nope);
+        }
 
         String hasil = null;
 
@@ -96,4 +97,29 @@ public class MainActivity extends AppCompatActivity {
 
         tvHasil3.setText(cbHasil);
     }
+
+    private boolean isValid() {
+        boolean valid = true;
+        String nama = etNama.getText().toString();
+        String nope = etNo.getText().toString();
+
+        if (nama.isEmpty()) {
+            etNama.setError("Nama belum diisi");
+            valid = false;
+        } else if (nama.length() < 4) {
+            etNama.setError("Tolong isi nama anda dengan benar");
+            valid = false;
+        } else {
+            etNama.setError(null);
+        }
+
+        if (nope.isEmpty()) {
+            etNo.setError("Nomor handphone belum diisi");
+            valid = false;
+        } else {
+            etNo.setError(null);
+        }
+        return valid;
+    }
 }
+
