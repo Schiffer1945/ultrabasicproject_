@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etNama, etNo;
+    EditText etNama, etTK;
     RadioGroup rgJurusan;
     RadioButton rbRPL, rbTKJ;
     CheckBox cbPaski, cbMetic, cbBDI, cbPA, cbPMR, cbMedsan, cbMAC, cbFC, cbBasket, cbVolly;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etNama = (EditText) findViewById(R.id.editTextNama);
-        etNo = (EditText) findViewById(R.id.editTextNo);
+        etTK = (EditText) findViewById(R.id.editTextTK);
         rgJurusan = (RadioGroup) findViewById(R.id.radioGroupJurusan);
         rbRPL = (RadioButton) findViewById(R.id.radioButtonRPL);
         rbTKJ = (RadioButton) findViewById(R.id.radioButtonTKJ);
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
     private void doProcess() {
         if (isValid()) {
             String nama = etNama.getText().toString();
-            int nope = Integer.parseInt(etNo.getText().toString());
-            tvHasil.setText("\n---------------------------\nNama : " + nama + "\nNomor HP : " + nope);
+            int tk = Integer.parseInt(etTK.getText().toString());
+            tvHasil.setText("\n---------------------------\nNama : " + nama + "\nTahun Lahir : " + tk);
         }
 
         String hasil = null;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isValid() {
         boolean valid = true;
         String nama = etNama.getText().toString();
-        String nope = etNo.getText().toString();
+        String tk = etTK.getText().toString();
 
         if (nama.isEmpty()) {
             etNama.setError("Nama belum diisi");
@@ -113,11 +113,13 @@ public class MainActivity extends AppCompatActivity {
             etNama.setError(null);
         }
 
-        if (nope.isEmpty()) {
-            etNo.setError("Nomor handphone belum diisi");
+        if (tk.isEmpty()) {
+            etTK.setError("Tahun kelahiran belum diisi");
             valid = false;
+        } else if (tk.length() != 4) {
+            etTK.setError("Format yyyy");
         } else {
-            etNo.setError(null);
+            etTK.setError(null);
         }
         return valid;
     }
